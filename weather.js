@@ -11,13 +11,11 @@ var next_hours_temp = [];
 var next_hours_weather = [];
 var next_hours_time = [];
 
-var next_day_1;
-var next_day_2;
-var next_day_3;
-var next_day_4;
-var next_day_5;
-var next_day_6;
-var next_day_7;
+var next_days_day = [];
+var next_days_temp = [];
+var next_days_weather = [];
+var next_days_humidity = [];
+var next_days_windspeed = [];
 
 // getUserCurrentWeather() grabs data needed for user's current / main weather section (left)
 function getUserCurrentWeather(){
@@ -31,7 +29,7 @@ fetch(oneCall_url).then(response => {
     curr_feelslike = Math.round(data.current.feels_like) + "°C";
     curr_temp = Math.round(data.current.temp) + "°C";
     curr_weather = data.current.weather[0].main;
-    curr_windspeed = data.current.wind_speed + " mph";
+    curr_windspeed = (data.current.wind_speed * 1.60934).toFixed(2) + " km/h";
     curr_humidity = data.current.humidity + "%";
 
     curr_sunrise = data.current.sunrise;
@@ -103,4 +101,38 @@ function getNextHoursForecast(data) {
 
 function getNextSevenDays(data) {
   // for loop that iterates 7 times grabbing each data and putting them in each specific array
+  next_days_day = [];
+  next_days_temp = [];
+  next_days_weather = [];
+  next_days_humidity = [];
+  next_days_windspeed = [];
+
+  for(var i = 1; i < 8; i++) {
+    var day_day = data.daily[i].dt;
+    day_day = getDateTime(day_day);
+    var sub_day = day_day.split(',')[0];
+    day_day = sub_day;
+    next_days_day.push(day_day);
+
+    var day_temp = Math.round(data.daily[i].temp.eve) + "°C" ;
+    next_days_temp.push(day_temp);
+
+    var day_weather = data.daily[i].weather[0].main;
+    next_days_weather.push(day_weather);
+
+    var day_humidity = data.daily[i].humidity + "%";
+    next_days_humidity.push(day_humidity);
+
+    var day_wind = (data.daily[i].wind_speed * 1.60934).toFixed(2) + " km/h";
+    next_days_windspeed.push(day_wind);
+
+
+  }
+
+  console.log(next_days_day);
+  console.log(next_days_temp);
+  console.log(next_days_weather);
+  console.log(next_days_humidity);
+  console.log(next_days_windspeed);
+
 }
