@@ -64,6 +64,7 @@ fetch(oneCall_url).then(response => {
     console.log(data);
 
     getNextHoursForecast(data);
+    getNextSevenDays(data);
 
   })
   .catch(err => {
@@ -72,6 +73,11 @@ fetch(oneCall_url).then(response => {
 }
 
 function getNextHoursForecast(data) {
+  // doing this resolves issue of stacking array elements every time user hits refresh
+  next_hours_temp = [];
+  next_hours_weather = [];
+  next_hours_time = [];
+
   // for loop that iterates 14 times grabbing each data and putting them in each specific array
   // start at [1] because [0] is the current hour user is in
   // still iterates 14 times
@@ -95,6 +101,6 @@ function getNextHoursForecast(data) {
     console.log(next_hours_time);
 }
 
-function getNextSevenDays() {
+function getNextSevenDays(data) {
   // for loop that iterates 7 times grabbing each data and putting them in each specific array
 }
