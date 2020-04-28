@@ -1,5 +1,7 @@
 var latitude;
 var longitude;
+var city;
+var country; 
 
 var x = document.getElementById("demo");
 
@@ -12,7 +14,7 @@ function getLocation() {
   }
 }
 
-// gets longitude, latitude, and timestamp from JSON file
+// gets longitude and latitude from JSON file
 function getLongLat(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
