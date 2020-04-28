@@ -27,20 +27,107 @@
 
   <!-- Google web font
    ================================================== -->
-  <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
+<div class="row">
+  <div class="col-sm-5" style="background-color: blue">
+    <div class="container">
 
-  <p>Find the weather in your area! 🐱🐶</p>
+  <div id="row1-curr" class="row">
+    <div class="col-sm-12 text-center">
+      <p id="timestamp">UPDATED AS OF: 2:40 AM
+        <button onclick="getUserCurrentWeather()" style="margin-left:2%">🐾 </button>
+      </p>
+    </div>
+  </div>
 
-<!-- unsure what function to put here ... should it be a refresh button that updates weather when user clicks
-or just setInterval() method that does it every 5 minutes or so? hmmmm ... the whole refresh thing works but inconsistent i think-->
-<button onclick="getUserCurrentWeather()">Click Me 🐾 </button>
+  <div id="row2-curr" class="row">
+      <div class="col-sm-6 text-center">
+        <h3 id="city" class="text-center">LOS ANGELES </h3>
+        <h6 id="country" >USA</h6>
+      </div>
 
-<p id="demo"></p>
-<br><br>
+      <div class="col-sm-6 text-center">
+        <h6 id="day">Sunday</h6>
+        <h6 id="date">April 20, 2020</h6>
+      </div>
+  </div>
+
+  <div id="row3-curr" class="row">
+    <div class="col-sm-12 ">
+      <h1 id="temp" class="text-center">20</h1>
+      <h6 id="weather" class="text-center">Clear</h6>
+    </div>
+  </div>
+
+  <div id="row4-curr" class="row">
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h6 class="row-text">Feels Like: </h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h6 class="row-text">Wind Speed: </h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h6 class="row-text">Humidity: </h6>
+        </div>
+      </div>
+      <div id="space" class="row">
+        <div class="col-sm-12 text-center">
+
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h6 class="row-text">Sunrise: </h6>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-12 text-center">
+          <h6 class="row-text">Sunset: </h6>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div id="row5-curr" class="row">
+<div class="col-sm-12">
+  <div class="text-center" style="background-color:red">
+    img
+  </div>
+</div>
+</div>
+
+
+
+  <br><br><br><br><br><br><br><br><br>
+  </div>
+  </div>
+
+  <div class="col-sm-7" style="background-color: yellow">
+    <div class="row"  style="background-color: red; padding-top: 200px" >
+
+
+    <p>hello i am yellow row 1</p>
+    <br><br><br>
+      </div>
+      <div class="row" style="background-color: green">
+      <p>hello i am yellow row 2</p>
+      <br><br><br>
+        </div>
+
+  </div>
+</div>
+
+
 
 
 

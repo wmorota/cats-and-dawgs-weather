@@ -1,0 +1,50 @@
+body {
+  font-family: 'Raleway', sans-serif;
+}
+
+
+#row1-curr {
+  padding-top: 5%;
+  background-color: pink;
+
+}
+
+#row2-curr {
+  background-color: orange;
+  padding-left: 5%;
+  margin-top:5%;
+}
+
+#row3-curr {
+  background-color: gray;
+  margin-top:10%;
+}
+
+#row4-curr {
+  background-color: purple;
+  margin-top:4%;
+}
+
+.row-text{
+  font-size: 15px;
+  margin-bottom: 1%
+}
+
+#row5-curr {
+  background-color: lightblue;
+  margin-top: 5%;
+}
+
+
+#temp {
+  font-size: 80px;
+}
+
+#weather {
+  margin-top: -2%;
+}
+
+#space{
+  margin-top: 1%;
+  margin-bottom: 1%;
+}

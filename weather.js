@@ -125,8 +125,6 @@ function getNextSevenDays(data) {
 
     var day_wind = (data.daily[i].wind_speed * 1.60934).toFixed(2) + " km/h";
     next_days_windspeed.push(day_wind);
-
-
   }
 
   console.log(next_days_day);

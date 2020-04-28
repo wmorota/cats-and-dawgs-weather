@@ -25,9 +25,6 @@ function getLongLat(position) {
   console.log("Latitude: " + latitude);
   console.log("Longitude: " + longitude);
 
-  x.innerHTML = "Latitude: " + latitude +
-  "<br>Longitude: " + longitude + "<br><br>";
-
   getUserCityAndCountry();
   getUserCurrentWeather();
 }
