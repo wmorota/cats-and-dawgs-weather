@@ -7,10 +7,11 @@ var curr_humidity;
 var curr_sunrise;
 var curr_sunset;
 
+// getUserCurrentWeather() grabs data needed for user's current / main weather section (left)
 function getUserCurrentWeather(){
   const oneCall_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
 
-// How to fetch an online JSON file from a given URL
+// How to fetch online JSON files from a given URL
 fetch(oneCall_url).then(response => {
     return response.json()
   })
@@ -39,12 +40,8 @@ fetch(oneCall_url).then(response => {
 
     curr_timestamp = "Updated as of: " + getDateTime(curr_timestamp);
 
-
-
-
-
-    console.log("Feels Like: " + curr_feelslike);
     console.log("Current Temperature: " + curr_temp);
+    console.log("Feels Like: " + curr_feelslike);
     console.log("Main Weather: " + curr_weather);
     console.log("Wind Speed: " + curr_windspeed);
     console.log("Humidity: " + curr_humidity);
@@ -58,4 +55,5 @@ fetch(oneCall_url).then(response => {
   .catch(err => {
     // Do something for an error here
   })
+
 }

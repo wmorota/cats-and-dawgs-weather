@@ -4,7 +4,7 @@ function getDateTime(timestamp) {
   var today = new Date(timestamp * 1000);
 
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  var dayName = days[today.getDay()];
+  var dayName = days[today.getDay()]; // grabs the day of the week 
 
   var day = today.getDate(); // grabs the current day
 
