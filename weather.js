@@ -7,6 +7,18 @@ var curr_humidity;
 var curr_sunrise;
 var curr_sunset;
 
+var next_hours_temp = [];
+var next_hours_weather = [];
+var next_hours_time = [];
+
+var next_day_1;
+var next_day_2;
+var next_day_3;
+var next_day_4;
+var next_day_5;
+var next_day_6;
+var next_day_7;
+
 // getUserCurrentWeather() grabs data needed for user's current / main weather section (left)
 function getUserCurrentWeather(){
   const oneCall_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
@@ -51,9 +63,38 @@ fetch(oneCall_url).then(response => {
 
     console.log(data);
 
+    getNextHoursForecast(data);
+
   })
   .catch(err => {
     // Do something for an error here
   })
+}
 
+function getNextHoursForecast(data) {
+  // for loop that iterates 14 times grabbing each data and putting them in each specific array
+  // start at [1] because [0] is the current hour user is in
+  // still iterates 14 times
+  for(var i = 1; i < 15; i++) {
+    var hour_temp = Math.round(data.hourly[i].temp) + "°C";
+    next_hours_temp.push(hour_temp);
+
+    var hour_weather = data.hourly[i].weather[0].main;
+    next_hours_weather.push(hour_weather);
+
+    var hour_time = data.hourly[i].dt;
+    hour_time = getDateTime(hour_time);
+    var sub_hour = hour_time.substring(
+    hour_time.lastIndexOf("@") + 2,
+    hour_time.lastIndexOf("M") + 1);
+    hour_time = sub_hour;
+    next_hours_time.push(hour_time);
+}
+    console.log(next_hours_temp);
+    console.log(next_hours_weather);
+    console.log(next_hours_time);
+}
+
+function getNextSevenDays() {
+  // for loop that iterates 7 times grabbing each data and putting them in each specific array
 }

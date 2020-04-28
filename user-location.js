@@ -1,3 +1,5 @@
+// Reminder: Do Sad Kitty and Doggo when user doesn't / can't connect LOL
+
 var latitude;
 var longitude;
 var city;
