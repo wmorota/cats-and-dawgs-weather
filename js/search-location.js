@@ -45,11 +45,11 @@ function searchCity(){
           c_weather = "Cloudy";
         }
 
-//if(city_name.length <= 4)
-        city_names.push(c_name);
-        city_countries.push(c_country);
-        city_temps.push(c_temp);
-        city_weathers.push(c_weather);
+          city_names.push(c_name);
+          city_countries.push(c_country);
+          city_temps.push(c_temp);
+          city_weathers.push(c_weather);
+
 
         console.log(city_names);
         console.log(city_countries);
@@ -71,7 +71,20 @@ function searchCity(){
 
 function showCity() {
   for(var i = 0; i < city_names.length; i++){
-    document.getElementById('city-div' + i).style.backgroundColor = "#96CCFF";
+    if(city_weathers[i] == "Cloudy" || city_weathers[i] == "Snow" || city_weathers[i] == "Haze" || city_weathers[i] == "Fog"){
+      document.getElementById('city-div' + i).style.backgroundColor = "#CDDCEA";
+    }
+    if(city_weathers[i] == "Rain" || city_weathers[i] == "Drizzle" ){
+      document.getElementById('city-div' + i).style.backgroundColor = "#9CD0FF";
+    }
+    if(city_weathers[i] == "Clear"){
+      document.getElementById('city-div' + i).style.backgroundColor = "#FFE99A";
+    }
+    if(city_weathers[i] == "Thunderstorm"){
+      document.getElementById('city-div' + i).style.backgroundColor = "#7DA6CC";
+    }
+
+
     document.getElementById('city-div' + i).style.color = "white";
     document.getElementById('div'+ i + "-name").innerHTML = city_names[i];
     document.getElementById('div'+ i + "-country").innerHTML = city_countries[i];
