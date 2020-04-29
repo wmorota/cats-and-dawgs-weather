@@ -13,6 +13,20 @@ body {
   display:none;
 }
 
+.btn-circle {
+    width: 30px;
+    height: 30px;
+    padding: 5px 0px;
+    border-radius: 15px;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.42857;
+}
+
+#refresh {
+  display: none;
+}
+
 .span-height{
   height: 100vh;
 }
@@ -73,7 +87,13 @@ body {
   font-weight: bolder;
 }
 
-#weather, #country, #date, #timestamp {
+#timestamp {
+  color: white;
+  font-size: 25px;
+  font-weight: normal;
+}
+
+#weather, #country, #date {
   margin-top: -2%;
   color: white;
   font-size: 25px;
@@ -83,4 +103,8 @@ body {
 #space{
   margin-top: 1%;
   margin-bottom: 1%;
+}
+
+#error{
+  display:none; 
 }
