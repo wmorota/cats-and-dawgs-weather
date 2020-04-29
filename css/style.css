@@ -38,7 +38,7 @@ body {
   border-color: #96CCFF;
   border-style: solid;
   border-width: 3px;
-  color:white; 
+  color:white;
 }
 
 .btn-daily{
@@ -57,6 +57,15 @@ body {
   color: #96CCFF;
   border-style: solid;
   border-width: 3px;
+}
+
+.bottom-right-rows{
+  margin-bottom:-2%;
+}
+
+.left-mid-span{
+  margin-top: 2.5%;
+  color:white;
 }
 
 
