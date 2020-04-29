@@ -77,26 +77,37 @@ fetch(oneCall_url).then(response => {
         if(curr_weather == "Cloudy"){
         document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/cloudy_kitty.svg";
         document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+        document.getElementById("main-temp-pic").src = "images/weather/main/cloudy.svg";
+        document.getElementById("main-temp-pic").style.display = "block";
         }
         if(curr_weather == "Snow"){
         document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/snowy_kitty.svg";
         document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+        document.getElementById("main-temp-pic").src = "images/weather/main/snow.svg";
+        document.getElementById("main-temp-pic").style.display = "block";
         }
     }
     if(curr_weather == "Clear"){
       document.getElementById("main_section").style.backgroundImage = "url('images/background/clear_sunny.svg')";
       document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/sunny_dog.svg";
       document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+      document.getElementById("main-temp-pic").src = "images/weather/main/sunny.svg";
+      document.getElementById("main-temp-pic").style.display = "block";
     }
     if(curr_weather == "Rain" || curr_weather == "Drizzle"){
       document.getElementById("main_section").style.backgroundImage = "url('images/background/rainy.svg')";
       document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/rainy_dog.svg";
       document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+      document.getElementById("main-temp-pic").src = "images/weather/main/rainy.svg";
+      document.getElementById("main-temp-pic").style.display = "block";
+
     }
     if(curr_weather == "Thunderstorm" || curr_weather == "Foggy"){
       document.getElementById("main_section").style.backgroundImage = "url('images/background/thunder_foggy.svg')";
       document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/thunder_kitty.svg";
       document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+      document.getElementById("main-temp-pic").src = "images/weather/main/thunder.svg";
+      document.getElementById("main-temp-pic").style.display = "block";
     }
 
     document.getElementById("timestamp").innerHTML = curr_timestamp;

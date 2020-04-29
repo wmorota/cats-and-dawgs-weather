@@ -9,12 +9,23 @@ body {
   background-position: center center;
 }
 
-#kitty_doggo_pic{
+#kitty_doggo_pic, #main-temp-pic{
   display:none;
 }
 
 .span-height{
   height: 100vh;
+}
+
+.main-temp-text{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.main-temp-pic{
+  margin-left:30%;
+  margin-top:-10%;
 }
 
 #row1-curr {
@@ -27,11 +38,11 @@ body {
 }
 
 #row3-curr {
-  margin-top:10%;
+  margin-top:12%;
 }
 
 #row4-curr {
-  margin-top:4%;
+  margin-top:10%;
 }
 
 .row-text{
@@ -43,13 +54,30 @@ body {
   margin-top: 5%;
 }
 
+#city {
+  color: white;
+  font-weight: bolder;
+}
+
+#day {
+  color: white;
+  font-size: 25px;
+  font-weight: bold;
+  margin-top: 1%;
+  margin-bottom: 4%;
+}
 
 #temp {
   font-size: 80px;
+  color: white;
+  font-weight: bolder;
 }
 
-#weather {
+#weather, #country, #date, #timestamp {
   margin-top: -2%;
+  color: white;
+  font-size: 25px;
+  font-weight: normal;
 }
 
 #space{
