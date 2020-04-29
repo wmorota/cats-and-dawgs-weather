@@ -141,8 +141,9 @@ fetch(oneCall_url).then(response => {
 
     console.log(data);
 
+    getNextSevenDays(data); // hmm some issue with this not being called happened ONCE
     getNextHoursForecast(data);
-    getNextSevenDays(data);
+
 
   })
   .catch(err => {
@@ -177,6 +178,7 @@ function getNextHoursForecast(data) {
     console.log(next_hours_temp);
     console.log(next_hours_weather);
     console.log(next_hours_time);
+    getHourlyData();
 }
 
 function getNextSevenDays(data) {
@@ -206,7 +208,6 @@ function getNextSevenDays(data) {
     var day_wind = (data.daily[i].wind_speed * 1.60934).toFixed(2) + " km/h";
     next_days_windspeed.push(day_wind);
   }
-
   console.log(next_days_day);
   console.log(next_days_temp);
   console.log(next_days_weather);

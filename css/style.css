@@ -9,7 +9,8 @@ body {
   background-position: center center;
 }
 
-#kitty_doggo_pic, #main-temp-pic{
+#kitty_doggo_pic, #main-temp-pic, #row0-3, #row0-6, #row1-3, #row1-6, #row2-3, #row2-6,
+#row3-3, #row3-6, #row4-3, #row4-6, #row5-3, #row5-6, #row6-3, #row6-6{
   display:none;
 }
 
@@ -61,6 +62,10 @@ body {
 
 .bottom-right-rows{
   margin-bottom:-2%;
+}
+
+.bottom-right-rows span{
+  color: #727272;
 }
 
 .left-mid-span{
