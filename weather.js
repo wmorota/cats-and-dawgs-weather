@@ -123,6 +123,8 @@ fetch(oneCall_url).then(response => {
     document.getElementById("sunrise").innerHTML = "Sunrise: " + curr_sunrise;
     document.getElementById("sunset").innerHTML = "Sunset: " + curr_sunset;
 
+    document.getElementById("refresh").style.display = "inline-block";
+
 
 
 
@@ -135,7 +137,7 @@ fetch(oneCall_url).then(response => {
     console.log("Sunset: " + curr_sunset);
     console.log("Timestamp: " + curr_timestamp);
     console.log("Day of Week: " + curr_daystamp);
-    console.log("Date: " + curr_datestamp);
+    console.log("Date:" + curr_datestamp);
 
     console.log(data);
 

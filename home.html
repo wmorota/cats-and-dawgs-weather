@@ -19,7 +19,7 @@
 
   <!-- Main CSS
    ================================================== -->
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
 
   <!-- Moment JS - This one is for converting military time to standard time
 	 ================================================== -->
@@ -38,7 +38,9 @@
 
   <div id="row1-curr" class="row">
     <div class="col-sm-12 text-center">
-      <button onclick="getUserCurrentWeather()">🐾 </button>
+      <button id="refresh" class="btn btn-success btn-circle btn-lg" onclick="getUserCurrentWeather()">
+        <img src="images/background/refresh_paw.svg" width = "22px" height = "18px" alt="Refresh Paw Icon">
+      </button>
       <p id="timestamp"></p>
     </div>
   </div>
@@ -63,6 +65,9 @@
       <div class="main-temp-text">
         <h1 id="temp" class="text-center"></h1>
         <h6 id="weather" class="text-center"></h6>
+        <div class="text-center">
+          <img id="error" src="images/background/sad.svg" alt="Sad Kitty and Doggo">
+        </div>
       </div>
     </div>
   </div>

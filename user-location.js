@@ -13,7 +13,9 @@ function getLocation() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(getLongLat, showError);
   } else {
-    x.innerHTML = "Geolocation is not supported by this browser 😿";
+    weather.innerHTML = "Geolocation is not supported by this browser";
+    document.getElementById("error").style.display = "inline-block";
+
   }
 }
 
@@ -33,16 +35,20 @@ function getLongLat(position) {
 function showError(error) {
   switch(error.code) {
     case error.PERMISSION_DENIED:
-      x.innerHTML = "User denied the request for Geolocation 😿"
+      weather.innerHTML = "User denied the request for Geolocation";
+      document.getElementById("error").style.display = "inline-block";
       break;
     case error.POSITION_UNAVAILABLE:
-      x.innerHTML = "Location information is unavailable 😿"
+      weather.innerHTML = "Location information is unavailable";
+      document.getElementById("error").style.display = "inline-block";
       break;
     case error.TIMEOUT:
-      x.innerHTML = "The request to get user location timed out 😿"
+      weather.innerHTML = "The request to get user location timed out";
+      document.getElementById("error").style.display = "inline-block";
       break;
     case error.UNKNOWN_ERROR:
-      x.innerHTML = "An unknown error occurred 😿"
+      weather.innerHTML = "An unknown error occurred";
+      document.getElementById("error").style.display = "inline-block";
       break;
   }
 }
