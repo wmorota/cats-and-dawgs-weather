@@ -7,6 +7,8 @@ function clickDaily()
   document.getElementById('hourly').style.backgroundColor = "white";
   document.getElementById('hourly').style.borderColor = "#96CCFF";
   document.getElementById('hourly').style.color = "#96CCFF";
+
+  getDailyData();
 }
 
 function clickHourly()
@@ -45,4 +47,17 @@ function getHourlyData() {
         document.getElementById('row' + num + "-6").style.display = "inline-block";
       }
     }
+}
+
+function getDailyData(){
+  for(var i = 0; i < 7; i++){
+    document.getElementById('row' + [i] + "-1").innerHTML = next_days_day[i];
+    document.getElementById('row' + [i] + "-2").innerHTML = next_days_temp[i];
+    document.getElementById('row' + [i] + "-3").src = "images/weather/small/" + next_hours_weather[i] + ".svg";
+    document.getElementById('row' + [i] + "-3").style.display = "inline-block";
+    document.getElementById('row' + [i] + "-4").innerHTML = next_days_humidity[i];
+    document.getElementById('row' + [i] + "-5").innerHTML = next_days_windspeed[i];
+    document.getElementById('row' + [i] + "-6").style.display = "none";
+
+  }
 }

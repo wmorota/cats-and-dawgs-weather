@@ -144,7 +144,6 @@ fetch(oneCall_url).then(response => {
     getNextSevenDays(data); // hmm some issue with this not being called happened ONCE
     getNextHoursForecast(data);
 
-
   })
   .catch(err => {
     // Do something for an error here
@@ -179,6 +178,7 @@ function getNextHoursForecast(data) {
     console.log(next_hours_weather);
     console.log(next_hours_time);
     getHourlyData();
+    clickHourly();
 }
 
 function getNextSevenDays(data) {
