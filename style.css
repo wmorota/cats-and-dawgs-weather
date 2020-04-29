@@ -1,27 +1,36 @@
 body {
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Quicksand', sans-serif;
 }
 
+#main_section {
+  background-color: #FFE99A;
+  background-size:cover;
+  background-repeat:no-repeat;
+  background-position: center center;
+}
+
+#kitty_doggo_pic{
+  display:none;
+}
+
+.span-height{
+  height: 100vh;
+}
 
 #row1-curr {
-  padding-top: 5%;
-  background-color: pink;
-
+  padding-top: 3%;
 }
 
 #row2-curr {
-  background-color: orange;
   padding-left: 5%;
   margin-top:5%;
 }
 
 #row3-curr {
-  background-color: gray;
   margin-top:10%;
 }
 
 #row4-curr {
-  background-color: purple;
   margin-top:4%;
 }
 
@@ -31,7 +40,6 @@ body {
 }
 
 #row5-curr {
-  background-color: lightblue;
   margin-top: 5%;
 }
 

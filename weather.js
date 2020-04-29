@@ -2,6 +2,8 @@ var curr_temp;
 var curr_feelslike;
 var curr_weather; // Clouds, Clear, Thunderstorm, Drizzle, Rain, Snow, Fog, Mist, Smoke, Haze, Dust, Sand, Ash, Squall, Tornado
 var curr_timestamp; // Updated as of:
+var curr_daystamp;
+var curr_datestamp;
 var curr_windspeed;
 var curr_humidity;
 var curr_sunrise;
@@ -34,7 +36,9 @@ fetch(oneCall_url).then(response => {
 
     curr_sunrise = data.current.sunrise;
     curr_sunset = data.current.sunset;
-    curr_timestamp = data.current.dt
+    curr_timestamp = data.current.dt;
+    curr_daystamp = data.current.dt;
+    curr_datestamp = data.current.dt;
 
     curr_sunrise = getDateTime(curr_sunrise);
     var sub_sunrise = curr_sunrise.substring(
@@ -48,7 +52,68 @@ fetch(oneCall_url).then(response => {
     curr_sunset.lastIndexOf("M") + 1);
     curr_sunset = sub_sunset;
 
-    curr_timestamp = "Updated as of: " + getDateTime(curr_timestamp);
+    curr_timestamp = getDateTime(curr_timestamp);
+    var sub_timestamp = curr_timestamp.substring(
+    curr_timestamp.lastIndexOf("@") + 2,
+    curr_timestamp.lastIndexOf("M") + 1);
+    curr_timestamp = "Updated as of: " + sub_timestamp;
+
+    curr_daystamp = getDateTime(curr_daystamp);
+    var sub_daystamp = curr_daystamp.split(',')[0];
+    curr_daystamp = sub_daystamp;
+
+    curr_datestamp = getDateTime(curr_datestamp);
+    var sub_datestamp = curr_datestamp.split(',')[1] + ", " + curr_datestamp.split(',')[2];
+    curr_datestamp = sub_datestamp.split('@')[0];
+
+    // if weather gets 'Clouds' then it just turns it to 'Cloudy' LOL
+    if(curr_weather == "Clouds"){
+      curr_weather = "Cloudy";
+    }
+
+    if(curr_weather == "Cloudy" || curr_weather == "Snow"){
+      document.getElementById("main_section").style.backgroundImage = "url('images/background/snowy_cloudy.svg')";
+
+        if(curr_weather == "Cloudy"){
+        document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/cloudy_kitty.svg";
+        document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+        }
+        if(curr_weather == "Snow"){
+        document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/snowy_kitty.svg";
+        document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+        }
+    }
+    if(curr_weather == "Clear"){
+      document.getElementById("main_section").style.backgroundImage = "url('images/background/clear_sunny.svg')";
+      document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/sunny_dog.svg";
+      document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+    }
+    if(curr_weather == "Rain" || curr_weather == "Drizzle"){
+      document.getElementById("main_section").style.backgroundImage = "url('images/background/rainy.svg')";
+      document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/rainy_dog.svg";
+      document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+    }
+    if(curr_weather == "Thunderstorm" || curr_weather == "Foggy"){
+      document.getElementById("main_section").style.backgroundImage = "url('images/background/thunder_foggy.svg')";
+      document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/thunder_kitty.svg";
+      document.getElementById("kitty_doggo_pic").style.display = "inline-block";
+    }
+
+    document.getElementById("timestamp").innerHTML = curr_timestamp;
+    document.getElementById("city").innerHTML = city;
+    document.getElementById("country").innerHTML = country;
+    document.getElementById("day").innerHTML = curr_daystamp;
+    document.getElementById("date").innerHTML = curr_datestamp;
+    document.getElementById("temp").innerHTML = curr_temp;
+    document.getElementById("weather").innerHTML = curr_weather;
+    document.getElementById("feels-like").innerHTML = "Feels Like: " + curr_feelslike;
+    document.getElementById("wind").innerHTML = "Wind Speed: " + curr_windspeed;
+    document.getElementById("humidity").innerHTML = "Humidity: " + curr_humidity;
+    document.getElementById("sunrise").innerHTML = "Sunrise: " + curr_sunrise;
+    document.getElementById("sunset").innerHTML = "Sunset: " + curr_sunset;
+
+
+
 
     console.log("Current Temperature: " + curr_temp);
     console.log("Feels Like: " + curr_feelslike);
@@ -58,6 +123,8 @@ fetch(oneCall_url).then(response => {
     console.log("Sunrise: " + curr_sunrise);
     console.log("Sunset: " + curr_sunset);
     console.log("Timestamp: " + curr_timestamp);
+    console.log("Day of Week: " + curr_daystamp);
+    console.log("Date: " + curr_datestamp);
 
     console.log(data);
 

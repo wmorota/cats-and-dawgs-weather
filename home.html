@@ -27,39 +27,38 @@
 
   <!-- Google web font
    ================================================== -->
-<link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
-<div class="row">
-  <div class="col-sm-5" style="background-color: blue">
+<div class="row span-height">
+  <div class="col-sm-5" id="main_section">
     <div class="container">
 
   <div id="row1-curr" class="row">
     <div class="col-sm-12 text-center">
-      <p id="timestamp">UPDATED AS OF: 2:40 AM
-        <button onclick="getUserCurrentWeather()" style="margin-left:2%">🐾 </button>
-      </p>
+      <button onclick="getUserCurrentWeather()">🐾 </button>
+      <p id="timestamp"></p>
     </div>
   </div>
 
   <div id="row2-curr" class="row">
       <div class="col-sm-6 text-center">
-        <h3 id="city" class="text-center">LOS ANGELES </h3>
-        <h6 id="country" >USA</h6>
+        <h3 id="city" class="text-center"></h3>
+        <h6 id="country"></h6>
       </div>
 
       <div class="col-sm-6 text-center">
-        <h6 id="day">Sunday</h6>
-        <h6 id="date">April 20, 2020</h6>
+        <h6 id="day"></h6>
+        <h6 id="date"></h6>
       </div>
   </div>
 
   <div id="row3-curr" class="row">
     <div class="col-sm-12 ">
-      <h1 id="temp" class="text-center">20</h1>
-      <h6 id="weather" class="text-center">Clear</h6>
+      <h1 id="temp" class="text-center"></h1>
+      <h6 id="weather" class="text-center"></h6>
     </div>
   </div>
 
@@ -67,17 +66,17 @@
     <div class="col-sm-12">
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h6 class="row-text">Feels Like: </h6>
+          <h6 id="feels-like" class="row-text"></h6>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h6 class="row-text">Wind Speed: </h6>
+          <h6 id="wind" class="row-text"></h6>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h6 class="row-text">Humidity: </h6>
+          <h6 id="humidity" class="row-text"></h6>
         </div>
       </div>
       <div id="space" class="row">
@@ -87,12 +86,12 @@
       </div>
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h6 class="row-text">Sunrise: </h6>
+          <h6 id="sunrise" class="row-text"></h6>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-12 text-center">
-          <h6 class="row-text">Sunset: </h6>
+          <h6 id="sunset" class="row-text"></h6>
         </div>
       </div>
     </div>
@@ -100,17 +99,14 @@
 
 <div id="row5-curr" class="row">
 <div class="col-sm-12">
-  <div class="text-center" style="background-color:red">
-    img
+  <div class="text-center">
+    <img id="kitty_doggo_pic" src="" width="180px" height="210px">
   </div>
 </div>
 </div>
 
-
-
-  <br><br><br><br><br><br><br><br><br>
   </div>
-  </div>
+  </div> <!-- end of left / main section -->
 
   <div class="col-sm-7" style="background-color: yellow">
     <div class="row"  style="background-color: red; padding-top: 200px" >
