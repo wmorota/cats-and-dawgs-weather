@@ -21,6 +21,11 @@
    ================================================== -->
   <link rel="stylesheet" href="css/style.css">
 
+  <!-- Icon Library
+   ================================================== -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
   <!-- Moment JS - This one is for converting military time to standard time
 	 ================================================== -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment.js"></script>
@@ -28,7 +33,7 @@
   <!-- Google web font
    ================================================== -->
    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" rel="stylesheet">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -119,11 +124,43 @@
   </div> <!-- end of left / main section -->
 
   <div class="col-sm-7"> <!-- start of whole right section -->
-    <div class="row" style="background-color: red; padding-top: 200px"> 
+    <div class="row"> <!-- start of search section -->
+      <div class="container">
 
+        <div class="row" style="margin-top:2%;">
+          <div class="col-sm-11">
+            <form id="searchForm" name="searchForm" onsubmit="searchCity(); return false">
+              <input id="search-city" class="form-control" type="text" placeholder="Search for a city" required autocomplete="off"
+                pattern="^[a-zA-Z\s]*$" title="No city with numbers or special characters exist">
+              <button id="search-btn" type="submit" class="search-btn"><i class="fa fa-search"></i></button>
+            </form>
+          </div>
+        </div>
 
-    <p>hello i am yellow row 1</p>
-    <br><br><br>
+        <div class="row show-city-rows" >
+          <div class="col-sm-3">
+            <div class="city-div1">
+              <h6>city name</h6>
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="city-div2">
+              o
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="city-div3">
+              sjsj
+            </div>
+          </div>
+          <div class="col-sm-3">
+            <div class="city-div4">
+              djd
+            </div>
+          </div>
+        </div>
+
+      </div>
   </div> <!-- end of search city section -->
 
   <div class="row"><!-- start of hourly, daily section -->
@@ -291,8 +328,6 @@
       </div>
     </div>
 
-
-
     </div>
   </div> <!-- end of hourly, daily section -->
 
@@ -315,5 +350,7 @@
    <script src="js/weather.js"></script>
    <script src="js/date-and-time.js"></script>
    <script src="js/hourly-and-daily.js"></script>
+   <script src="js/search-location.js"></script>
+
 
 </html>
