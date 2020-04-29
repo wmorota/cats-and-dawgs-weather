@@ -118,22 +118,32 @@
   </div>
   </div> <!-- end of left / main section -->
 
-  <div class="col-sm-7" style="background-color: yellow">
-    <div class="row"  style="background-color: red; padding-top: 200px" >
+  <div class="col-sm-7" style="background-color: yellow"> <!-- start of whole right section -->
+    <div class="row" style="background-color: red; padding-top: 200px">
 
 
     <p>hello i am yellow row 1</p>
     <br><br><br>
-      </div>
-      <div class="row" style="background-color: green">
-      <p>hello i am yellow row 2</p>
-      <br><br><br>
+  </div> <!-- end of search city section -->
+
+  <div class="row" style="background-color:green"><!-- start of hourly, daily section -->
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-4">
+          <button class="btn btn-lg btn-hourly" type="button" id="hourly" onclick="clickHourly();">Hourly</button>
+          <button class="btn btn-lg btn-daily" type="button" id="daily" onclick="clickDaily();">Daily</button>
         </div>
+        <div class="col-sm-8">
+        </div>
+      </div>
 
-  </div>
-</div>
+    </div>
 
 
+  </div> <!-- end of hourly, daily section -->
+
+  </div> <!-- end of whole right section -->
+</div> <!-- end of whole 1 row of this page -->
 
 
 
@@ -150,5 +160,6 @@
    <script src="js/user-location.js"></script>
    <script src="js/weather.js"></script>
    <script src="js/date-and-time.js"></script>
+   <script src="js/hourly-and-daily.js"></script>
 
 </html>
