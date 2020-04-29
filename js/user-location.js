@@ -1,11 +1,8 @@
-// Reminder: Do Sad Kitty and Doggo when user doesn't / can't connect LOL
-
 var latitude;
 var longitude;
 var city;
 var country;
 
-var x = document.getElementById("demo");
 getLocation();
 
 // getLocation() requests for user's geolocation asking for their permission to enable location tracking
@@ -15,7 +12,8 @@ function getLocation() {
   } else {
     weather.innerHTML = "Geolocation is not supported by this browser";
     document.getElementById("error").style.display = "inline-block";
-
+    document.getElementById("error-bottom-right").innerHTML = "Geolocation is not supported by this browser";
+    document.getElementById("error-bottom-right-img").style.display = "inline-block";
   }
 }
 
@@ -37,18 +35,26 @@ function showError(error) {
     case error.PERMISSION_DENIED:
       weather.innerHTML = "User denied the request for Geolocation";
       document.getElementById("error").style.display = "inline-block";
+      document.getElementById("error-bottom-right").innerHTML = "User denied the request for Geolocation";
+      document.getElementById("error-bottom-right-img").style.display = "inline-block";
       break;
     case error.POSITION_UNAVAILABLE:
       weather.innerHTML = "Location information is unavailable";
       document.getElementById("error").style.display = "inline-block";
+      document.getElementById("error-bottom-right").innerHTML = "Location information is unavailable";
+      document.getElementById("error-bottom-right-img").style.display = "inline-block";
       break;
     case error.TIMEOUT:
       weather.innerHTML = "The request to get user location timed out";
       document.getElementById("error").style.display = "inline-block";
+      document.getElementById("error-bottom-right").innerHTML = "The request to get user location timed out";
+      document.getElementById("error-bottom-right-img").style.display = "inline-block";
       break;
     case error.UNKNOWN_ERROR:
       weather.innerHTML = "An unknown error occurred";
       document.getElementById("error").style.display = "inline-block";
+      document.getElementById("error-bottom-right").innerHTML = "An unknown error occurred";
+      document.getElementById("error-bottom-right-img").style.display = "inline-block";
       break;
   }
 }

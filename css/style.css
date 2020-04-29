@@ -2,6 +2,11 @@ body {
   font-family: 'Quicksand', sans-serif;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
 #main_section {
   background-color: #FFE99A;
   background-size:cover;
@@ -9,8 +14,8 @@ body {
   background-position: center center;
 }
 
-#kitty_doggo_pic, #main-temp-pic, #row0-3, #row0-6, #row1-3, #row1-6, #row2-3, #row2-6,
-#row3-3, #row3-6, #row4-3, #row4-6, #row5-3, #row5-6, #row6-3, #row6-6{
+#kitty_doggo_pic, #main-temp-pic, #error, #row0-3, #row0-6, #row1-3, #row1-6, #row2-3, #row2-6,
+#row3-3, #row3-6, #row4-3, #row4-6, #row5-3, #row5-6, #row6-3, #row6-6, #error-bottom-right-img{
   display:none;
 }
 
@@ -157,6 +162,10 @@ body {
   margin-bottom: 1%;
 }
 
-#error{
-  display:none;
+#error-bottom-right-img {
+  margin-top: 2%;
+}
+
+.error-2{
+  margin-top:5%;
 }
