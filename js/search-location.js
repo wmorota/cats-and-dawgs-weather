@@ -11,7 +11,7 @@ var c_weather;
 // searchCity() is executed when user clicks Enter or the search button to find a specific city's weather forecast
 function searchCity(){
   var input = document.getElementById("search-city").value;
-  var searchCity_URL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
+  var searchCity_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=metric&appid={YOUR_API_KEY}";
 
   // Fetch online JSON files from a given URL
   fetch(searchCity_URL).then(response => {
@@ -84,7 +84,7 @@ function showCity() {
 
 // refreshCity() outputs updated city weather data onto the user's page
 function refreshCity() {
-  var refreshCity0_URL = "http://api.openweathermap.org/data/2.5/weather?q=" + city_names[0] + "&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
+  var refreshCity0_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city_names[0] + "&units=metric&appid={YOUR_API_KEY}";
 
   // FOR ZERO
   fetch(refreshCity0_URL).then(response => {
@@ -108,7 +108,7 @@ function refreshCity() {
     })
 
   for(var i = 1; i < city_names.length ; i++){
-    var refreshCity_URL = "http://api.openweathermap.org/data/2.5/weather?q=" + city_names[i] + "&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
+    var refreshCity_URL = "https://api.openweathermap.org/data/2.5/weather?q=" + city_names[i] + "&units=metric&appid={YOUR_API_KEY}";
 
     // Fetch online JSON files from a given URL
     fetch(refreshCity_URL).then(response => {
