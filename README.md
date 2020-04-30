@@ -1,6 +1,6 @@
 # cats-and-dawgs-weather
 Cats and Dawgs is a responsive location-based weather application that allows users to check the weather 
-forecast within their current area along with the hourly and daily forecasts. 
+forecast within their current area along with hourly and daily forecasts. 
 
 Users can also search and check on the real-time weather forecasts on different cities around the world. 
 
