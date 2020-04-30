@@ -71,10 +71,10 @@ fetch(oneCall_url).then(response => {
       curr_weather = "Cloudy";
     }
 
-    if(curr_weather == "Cloudy" || curr_weather == "Snow" || curr_weather == "Fog"){
+    if(curr_weather == "Cloudy" || curr_weather == "Snow" || curr_weather == "Fog" || curr_weather == "Mist"){
       document.getElementById("main_section").style.backgroundImage = "url('images/background/snowy_cloudy.svg')";
 
-        if(curr_weather == "Cloudy" || curr_weather == "Fog" ){
+        if(curr_weather == "Cloudy" || curr_weather == "Fog" || curr_weather == "Mist"){
         document.getElementById("kitty_doggo_pic").src = "images/kitty-and-doggo/cloudy_kitty.svg";
         document.getElementById("kitty_doggo_pic").style.display = "inline-block";
         document.getElementById("main-temp-pic").src = "images/weather/main/cloudy.svg";
