@@ -6,7 +6,7 @@ Users can also search and check on the real-time weather forecasts on different 
 
 This application was created with the help of the OpenWeatherMap API. 
 
-🐱🐶
+🐱🐶☔
 
 Designed by: Genesis Bautista <br>
 Developed by: Wesley Morota
