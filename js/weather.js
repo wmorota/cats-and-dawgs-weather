@@ -21,7 +21,7 @@ var next_days_windspeed = [];
 
 // getUserCurrentWeather() grabs data needed for user's current / main weather section (left)
 function getUserCurrentWeather(){
-  const oneCall_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
+  const oneCall_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&units=metric&appid={YOUR_API_KEY}";
 
 // Fetch online JSON files from a given URL
 fetch(oneCall_url).then(response => {
