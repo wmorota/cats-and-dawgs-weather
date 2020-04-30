@@ -8,7 +8,7 @@ html, body {
 }
 
 #main_section {
-  background-color: #FFE99A;
+  background-color: #96CCFF;
   background-size:cover;
   background-repeat:no-repeat;
   background-position: center center;
@@ -17,7 +17,9 @@ html, body {
 #kitty_doggo_pic, #main-temp-pic, #error, #row0-3, #row0-6, #row1-3, #row1-6, #row2-3, #row2-6,
 #row3-3, #row3-6, #row4-3, #row4-6, #row5-3, #row5-6, #row6-3, #row6-6, #error-bottom-right-img,
 #humid-icon0, #humid-icon1, #humid-icon2, #humid-icon3, #humid-icon4, #humid-icon5, #humid-icon6,
-#main-humid {
+#main-humid, #wind-icon0, #wind-icon1, #wind-icon2, #wind-icon3, #wind-icon4, #wind-icon5,
+#wind-icon6, #main-wind
+{
   display:none;
 }
 
@@ -68,7 +70,7 @@ html, body {
 }
 
 .bottom-right-rows{
-  margin-bottom:-2%;
+  margin-bottom: -2%;
 }
 
 .bottom-right-rows span{
@@ -200,6 +202,9 @@ form {
 
 input[type=text] {
   flex-grow: 2;
+  border-color: #96CCFF;
+  border-style: solid;
+  border-width: 3px;
 }
 
 #search-city {

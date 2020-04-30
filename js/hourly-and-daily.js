@@ -17,6 +17,14 @@ function clickDaily()
   document.getElementById('humid-icon4').style.display = "inline-block";
   document.getElementById('humid-icon5').style.display = "inline-block";
   document.getElementById('humid-icon6').style.display = "inline-block";
+
+  document.getElementById('wind-icon0').style.display = "inline-block";
+  document.getElementById('wind-icon1').style.display = "inline-block";
+  document.getElementById('wind-icon2').style.display = "inline-block";
+  document.getElementById('wind-icon3').style.display = "inline-block";
+  document.getElementById('wind-icon4').style.display = "inline-block";
+  document.getElementById('wind-icon5').style.display = "inline-block";
+  document.getElementById('wind-icon6').style.display = "inline-block";
 }
 
 function clickHourly()
@@ -36,6 +44,14 @@ function clickHourly()
   document.getElementById('humid-icon4').style.display = "none";
   document.getElementById('humid-icon5').style.display = "none";
   document.getElementById('humid-icon6').style.display = "none";
+
+  document.getElementById('wind-icon0').style.display = "none";
+  document.getElementById('wind-icon1').style.display = "none";
+  document.getElementById('wind-icon2').style.display = "none";
+  document.getElementById('wind-icon3').style.display = "none";
+  document.getElementById('wind-icon4').style.display = "none";
+  document.getElementById('wind-icon5').style.display = "none";
+  document.getElementById('wind-icon6').style.display = "none";
 
 
   getHourlyData();

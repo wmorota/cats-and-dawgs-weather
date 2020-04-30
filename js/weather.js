@@ -124,6 +124,7 @@ fetch(oneCall_url).then(response => {
     document.getElementById("sunset").innerHTML = "Sunset: " + curr_sunset;
 
     document.getElementById("main-humid").style.display = "inline-block";
+    document.getElementById("main-wind").style.display = "inline-block";
     document.getElementById("refresh").style.display = "inline-block";
 
 
