@@ -57,7 +57,7 @@ function showError(error) {
 
 // getUserCityAndCountry() grabs user's city and country based off their geolocation
 function getUserCityAndCountry(){
-  const userLocation_url = "https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
+  const userLocation_url = "https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&units=metric&appid={YOUR_API_KEY}";
 
   // Fetch an online JSON file from a given URL
   fetch(userLocation_url).then(response => {
