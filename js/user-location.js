@@ -21,10 +21,6 @@ function getLocation() {
 function getLongLat(position) {
   latitude = position.coords.latitude;
   longitude = position.coords.longitude;
-
-  console.log("Latitude: " + latitude);
-  console.log("Longitude: " + longitude);
-
   getUserCityAndCountry();
   getUserCurrentWeather();
 }
@@ -63,21 +59,15 @@ function showError(error) {
 function getUserCityAndCountry(){
   const userLocation_url = "https://api.openweathermap.org/data/2.5/weather?lat="+latitude+"&lon="+longitude+"&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
 
-  // How to fetch an online JSON file from a given URL
+  // Fetch an online JSON file from a given URL
   fetch(userLocation_url).then(response => {
       return response.json()
     })
     .then(data => {
       city = data.name;
       country = data.sys.country;
-
-      console.log("City: " + city);
-      console.log("Country: " + country);
-
-      //console.log(data);
     })
     .catch(err => {
-      // Do something for an error here
+        // Do something for an error here
     })
-
 }

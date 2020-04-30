@@ -1,7 +1,7 @@
 var curr_temp;
 var curr_feelslike;
 var curr_weather; // Clouds, Clear, Thunderstorm, Drizzle, Rain, Snow, Fog, Mist, Smoke, Haze, Dust, Sand, Ash, Squall, Tornado
-var curr_timestamp; // Updated as of:
+var curr_timestamp;
 var curr_daystamp;
 var curr_datestamp;
 var curr_windspeed;
@@ -23,7 +23,7 @@ var next_days_windspeed = [];
 function getUserCurrentWeather(){
   const oneCall_url = "https://api.openweathermap.org/data/2.5/onecall?lat="+latitude+"&lon="+longitude+"&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
 
-// How to fetch online JSON files from a given URL
+// Fetch online JSON files from a given URL
 fetch(oneCall_url).then(response => {
     return response.json()
   })
@@ -127,40 +127,22 @@ fetch(oneCall_url).then(response => {
     document.getElementById("main-wind").style.display = "inline-block";
     document.getElementById("refresh").style.display = "inline-block";
 
-
-
-
-    console.log("Current Temperature: " + curr_temp);
-    console.log("Feels Like: " + curr_feelslike);
-    console.log("Main Weather: " + curr_weather);
-    console.log("Wind Speed: " + curr_windspeed);
-    console.log("Humidity: " + curr_humidity);
-    console.log("Sunrise: " + curr_sunrise);
-    console.log("Sunset: " + curr_sunset);
-    console.log("Timestamp: " + curr_timestamp);
-    console.log("Day of Week: " + curr_daystamp);
-    console.log("Date:" + curr_datestamp);
-
-    console.log(data);
-
-    getNextSevenDays(data); // hmm some issue with this not being called happened ONCE
+    getNextSevenDays(data);
     getNextHoursForecast(data);
 
   })
   .catch(err => {
-    // Do something for an error here
+      // Do something for an error here
   })
 }
 
+// getNextHoursForecast() grabs data needed for Hourly section
 function getNextHoursForecast(data) {
-  // doing this resolves issue of stacking array elements every time user hits refresh
+  // Resolves issue of stacking array elements every time user hits refresh
   next_hours_temp = [];
   next_hours_weather = [];
   next_hours_time = [];
 
-  // for loop that iterates 14 times grabbing each data and putting them in each specific array
-  // start at [1] because [0] is the current hour user is in
-  // still iterates 14 times
   for(var i = 1; i < 15; i++) {
     var hour_temp = Math.round(data.hourly[i].temp) + "°C";
     next_hours_temp.push(hour_temp);
@@ -176,15 +158,13 @@ function getNextHoursForecast(data) {
     hour_time = sub_hour;
     next_hours_time.push(hour_time);
 }
-    console.log(next_hours_temp);
-    console.log(next_hours_weather);
-    console.log(next_hours_time);
     getHourlyData();
     clickHourly();
 }
 
+// getNextSevenDays() grabs data needed for Daily section
 function getNextSevenDays(data) {
-  // for loop that iterates 7 times grabbing each data and putting them in each specific array
+  // Resolves issue of stacking array elements every time user hits refresh
   next_days_day = [];
   next_days_temp = [];
   next_days_weather = [];
@@ -210,10 +190,4 @@ function getNextSevenDays(data) {
     var day_wind = (data.daily[i].wind_speed * 1.60934).toFixed(2) + " km/h";
     next_days_windspeed.push(day_wind);
   }
-  console.log(next_days_day);
-  console.log(next_days_temp);
-  console.log(next_days_weather);
-  console.log(next_days_humidity);
-  console.log(next_days_windspeed);
-
 }

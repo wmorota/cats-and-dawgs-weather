@@ -1,3 +1,5 @@
+
+// clickDaily() executes code that should occur when user clicks on Daily button
 function clickDaily()
 {
   document.getElementById('daily').style.backgroundColor = "#96CCFF";
@@ -27,6 +29,7 @@ function clickDaily()
   document.getElementById('wind-icon6').style.display = "inline-block";
 }
 
+// clickDaily() executes code that should occur when user clicks on Hourly button
 function clickHourly()
 {
   document.getElementById('hourly').style.backgroundColor = "#96CCFF";
@@ -53,10 +56,10 @@ function clickHourly()
   document.getElementById('wind-icon5').style.display = "none";
   document.getElementById('wind-icon6').style.display = "none";
 
-
   getHourlyData();
 }
 
+// getHourlyData() outputs hourly weather data onto the user's page
 function getHourlyData() {
     for(var i = 0; i < 14; i++) {
       if(i == 0){
@@ -82,6 +85,7 @@ function getHourlyData() {
     }
 }
 
+// getDailyData() outputs hourly weather data onto the user's page
 function getDailyData(){
   for(var i = 0; i < 7; i++){
     document.getElementById('row' + [i] + "-1").innerHTML = next_days_day[i];

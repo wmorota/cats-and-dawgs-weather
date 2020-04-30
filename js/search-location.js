@@ -8,20 +8,16 @@ var c_country;
 var c_temp;
 var c_weather;
 
+// searchCity() is executed when user clicks Enter or the search button to find a specific city's weather forecast
 function searchCity(){
-
   var input = document.getElementById("search-city").value;
-  console.log(input);
-
   var searchCity_URL = "http://api.openweathermap.org/data/2.5/weather?q=" + input + "&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
 
-  // How to fetch online JSON files from a given URL
+  // Fetch online JSON files from a given URL
   fetch(searchCity_URL).then(response => {
       return response.json()
     })
     .then(data => {
-      console.log(data);
-
       var message = "";
       message = data.message;
 
@@ -34,12 +30,6 @@ function searchCity(){
         c_country = data.sys.country;
         c_temp = Math.round(data.main.temp) + "°C";
         c_weather = data.weather[0].main;
-
-        console.log("ok it works");
-        console.log(c_name);
-        console.log(c_country);
-        console.log(c_temp);
-        console.log(c_weather);
 
         // if weather gets 'Clouds' then it just turns it to 'Cloudy' LOL
         if(c_weather == "Clouds"){
@@ -55,25 +45,18 @@ function searchCity(){
             alert('Saving, deleting, and adding of more than 4 cities will be available in Version 2.0 of Cats and Dawgs 🐱🐶');
           }
 
-
-        console.log(city_names);
-        console.log(city_countries);
-        console.log(city_temps);
-        console.log(city_weathers);
-
         showCity();
         document.getElementById('searchForm').reset();
-      }
-
-    })
+      }})
     .catch(err => {
-
+        // Do something for an error here
     })
 }
 
+// showCity() outputs city weather data onto the user's page
 function showCity() {
   for(var i = 0; i < city_names.length; i++){
-    if(city_weathers[i] == "Cloudy" || city_weathers[i] == "Snow" || city_weathers[i] == "Haze" || city_weathers[i] == "Fog"){
+    if(city_weathers[i] == "Cloudy" || city_weathers[i] == "Snow" || city_weathers[i] == "Haze" || city_weathers[i] == "Fog" || city_weathers[i] == "Mist"){
       document.getElementById('city-div' + i).style.backgroundColor = "#CDDCEA";
     }
     if(city_weathers[i] == "Rain" || city_weathers[i] == "Drizzle" ){
@@ -99,6 +82,7 @@ function showCity() {
   }
 }
 
+// refreshCity() outputs updated city weather data onto the user's page
 function refreshCity() {
   var refreshCity0_URL = "http://api.openweathermap.org/data/2.5/weather?q=" + city_names[0] + "&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
 
@@ -110,10 +94,6 @@ function refreshCity() {
         c_temp = Math.round(data.main.temp) + "°C";
         c_weather = data.weather[0].main;
 
-        console.log("zero");
-        console.log("refreshed zero temp: " + c_temp);
-        console.log("refreshed zero weather: " + c_weather);
-
         // if weather gets 'Clouds' then it just turns it to 'Cloudy' LOL
         if(c_weather == "Clouds"){
           c_weather = "Cloudy";
@@ -122,31 +102,21 @@ function refreshCity() {
           city_temps[0] = c_temp;
           city_weathers[0] = c_weather;
 
-          console.log(city_temps[0] + " is now: " + c_temp);
-          console.log(city_weather[0] + " is now: " + c_weather);
-
-          console.log('iteration: ' + i);
-
         showCity();
     })
     .catch(err => {
     })
 
-
   for(var i = 1; i < city_names.length ; i++){
     var refreshCity_URL = "http://api.openweathermap.org/data/2.5/weather?q=" + city_names[i] + "&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
 
-    // How to fetch online JSON files from a given URL
+    // Fetch online JSON files from a given URL
     fetch(refreshCity_URL).then(response => {
         return response.json()
       })
       .then(data => {
           c_temp = Math.round(data.main.temp) + "°C";
           c_weather = data.weather[0].main;
-
-          console.log("refreshed");
-          console.log("refreshed temp: " + c_temp);
-          console.log("refreshed weather: " + c_weather);
 
           // if weather gets 'Clouds' then it just turns it to 'Cloudy' LOL
           if(c_weather == "Clouds"){
@@ -155,11 +125,6 @@ function refreshCity() {
 
             city_temps[i-1] = c_temp;
             city_weathers[i-1] = c_weather;
-
-            console.log(city_temps[i - 1] + " is now: " + c_temp);
-            console.log(city_weather[i - 1] + " is now: " + c_weather);
-
-            console.log('iteration: ' + i);
 
           showCity();
       })

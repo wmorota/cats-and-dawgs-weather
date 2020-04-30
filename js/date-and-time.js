@@ -1,10 +1,10 @@
 
-// converts Unix epoch time to Date and Time
+// getDateTime() converts Unix epoch time to Date and Time
 function getDateTime(timestamp) {
   var today = new Date(timestamp * 1000);
 
   var days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-  var dayName = days[today.getDay()]; // grabs the day of the week 
+  var dayName = days[today.getDay()]; // grabs the day of the week
 
   var day = today.getDate(); // grabs the current day
 
@@ -40,6 +40,7 @@ function getDateTime(timestamp) {
   return final;
 }
 
+// convert() is using Moment.JS and it's to convert military time to standard time
 function convert(input) {
     return moment(input, 'HH:mm').format('h:mm A');
 }
