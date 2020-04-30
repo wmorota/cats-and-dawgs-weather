@@ -123,6 +123,7 @@ fetch(oneCall_url).then(response => {
     document.getElementById("sunrise").innerHTML = "Sunrise: " + curr_sunrise;
     document.getElementById("sunset").innerHTML = "Sunset: " + curr_sunset;
 
+    document.getElementById("main-humid").style.display = "inline-block";
     document.getElementById("refresh").style.display = "inline-block";
 
 

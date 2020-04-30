@@ -15,7 +15,9 @@ html, body {
 }
 
 #kitty_doggo_pic, #main-temp-pic, #error, #row0-3, #row0-6, #row1-3, #row1-6, #row2-3, #row2-6,
-#row3-3, #row3-6, #row4-3, #row4-6, #row5-3, #row5-6, #row6-3, #row6-6, #error-bottom-right-img{
+#row3-3, #row3-6, #row4-3, #row4-6, #row5-3, #row5-6, #row6-3, #row6-6, #error-bottom-right-img,
+#humid-icon0, #humid-icon1, #humid-icon2, #humid-icon3, #humid-icon4, #humid-icon5, #humid-icon6,
+#main-humid {
   display:none;
 }
 
@@ -361,7 +363,6 @@ input[type=text] {
   font-size:30px;
   margin-bottom: 5%;
 }
-
 
 .error-2{
   margin-top:5%;

@@ -9,6 +9,14 @@ function clickDaily()
   document.getElementById('hourly').style.color = "#96CCFF";
 
   getDailyData();
+
+  document.getElementById('humid-icon0').style.display = "inline-block";
+  document.getElementById('humid-icon1').style.display = "inline-block";
+  document.getElementById('humid-icon2').style.display = "inline-block";
+  document.getElementById('humid-icon3').style.display = "inline-block";
+  document.getElementById('humid-icon4').style.display = "inline-block";
+  document.getElementById('humid-icon5').style.display = "inline-block";
+  document.getElementById('humid-icon6').style.display = "inline-block";
 }
 
 function clickHourly()
@@ -20,6 +28,15 @@ function clickHourly()
   document.getElementById('daily').style.backgroundColor = "white";
   document.getElementById('daily').style.borderColor = "#96CCFF";
   document.getElementById('daily').style.color = "#96CCFF";
+
+  document.getElementById('humid-icon0').style.display = "none";
+  document.getElementById('humid-icon1').style.display = "none";
+  document.getElementById('humid-icon2').style.display = "none";
+  document.getElementById('humid-icon3').style.display = "none";
+  document.getElementById('humid-icon4').style.display = "none";
+  document.getElementById('humid-icon5').style.display = "none";
+  document.getElementById('humid-icon6').style.display = "none";
+
 
   getHourlyData();
 }
@@ -58,6 +75,5 @@ function getDailyData(){
     document.getElementById('row' + [i] + "-4").innerHTML = next_days_humidity[i];
     document.getElementById('row' + [i] + "-5").innerHTML = next_days_windspeed[i];
     document.getElementById('row' + [i] + "-6").style.display = "none";
-
   }
 }

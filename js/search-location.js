@@ -133,7 +133,6 @@ function refreshCity() {
     })
 
 
-
   for(var i = 1; i < city_names.length ; i++){
     var refreshCity_URL = "http://api.openweathermap.org/data/2.5/weather?q=" + city_names[i] + "&units=metric&appid=bd007df1fd5fd56285b9b4e42f0b658b";
 
